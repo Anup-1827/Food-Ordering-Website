@@ -8,11 +8,14 @@ import Snacks from './Component/Pages/Snacks';
 import Dinner from './Component/Pages/Dinner';
 import Drinks from './Component/Pages/Drinks';
 import NightLife from './Component/Pages/NightLife';
+import Header from './Component/HeaderAndFooter/Header';
+import Footer from './Component/HeaderAndFooter/Footer';
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Header/>
           <Routes>
               <Route path='/' element={ <Home/>}/>
               <Route path='/Breakfast' element={<Breakfast/>}/>
@@ -22,6 +25,7 @@ function App() {
               <Route path='/Drinks' element={<Drinks/>}/>
               <Route path='/NightLife' element={<NightLife/>}/>
           </Routes>
+          <Footer/>
       </Router>
     </div>
   );

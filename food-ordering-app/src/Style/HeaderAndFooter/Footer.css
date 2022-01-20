@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.Footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    padding: 1.875rem;
+}
+    .Footer .icon a{
+        text-decoration: none;
+    }
+    .Footer .icon svg{
+        color: #ffffff;
+        font-size: 2.5rem;
+        margin: 0 0.313rem;
+        cursor: pointer;
+    }
+
+    .Footer p{
+        color: #ffffff;
+    }
