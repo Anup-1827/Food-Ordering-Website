@@ -18,11 +18,15 @@
     width: 30%;
     /* border: 1px solid #000000; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
-    display: flex;
+    
     margin: 0.938rem;
     margin-left: 0;
     cursor: pointer;
 }
+    .card a{
+        display: flex;
+        text-decoration: none;
+    }
 
     .card .image {
         width: 9.375rem;

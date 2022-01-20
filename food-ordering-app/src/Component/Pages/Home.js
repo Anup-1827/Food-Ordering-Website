@@ -1,11 +1,11 @@
 // Css File
-import '../Style/Home.css'
-import Breakfast from '../Assets/Images/Breakfast.png'
-import Lunch from '../Assets/Images/Lunch.png'
-import Snacks from '../Assets/Images/Snacks.png'
-import Dinner from '../Assets/Images/Dinner.png'
-import Drinks from '../Assets/Images/Drinks.png'
-import NightLife from '../Assets/Images/Nightlife.png'
+import '../../Style/Pages/Home.css'
+import Breakfast from '../../Assets/Images/Breakfast.png'
+import Lunch from '../../Assets/Images/Lunch.png'
+import Snacks from '../../Assets/Images/Snacks.png'
+import Dinner from '../../Assets/Images/Dinner.png'
+import Drinks from '../../Assets/Images/Drinks.png'
+import NightLife from '../../Assets/Images/Nightlife.png'
 
 
 // Packges
