@@ -1,5 +1,8 @@
+@import '../mixin';
+@import '../color';
+
 .Header{
-    background-color: red;
+    background-color: $red;
     display: flex;
     justify-content: space-between;
     padding: 0.313rem 0.625rem;
@@ -8,10 +11,10 @@
         text-decoration: none;
     }
     .Header h1{
-        background-color: #ffffff;
+        background-color: $white;
         font-size: 2.5rem;
         font-weight: bold;
-        color: red;
+        color: $red;
         border-radius: 50%; 
         padding: 0.625rem 1.563rem;
     }
@@ -24,19 +27,19 @@
     }    
 
     .Header .loginAndAccount .login{
-        color: #ffffff;
+        color: $white;
         margin: 0 0.625rem;
         padding-top: 0.438rem;
     } 
  
     .Header .loginAndAccount .createAcc{
         background-color: transparent;
-        border: 1px solid #ffffff;
+        border: 1px solid $white;
         padding: 0.438rem 0.938rem;
         border-radius: 10px;
     }
     .Header .loginAndAccount .com{
-        color: #ffffff;
+        color: $white;
         margin:  0.625rem;
         font-size: 1.25rem;
         cursor: pointer;

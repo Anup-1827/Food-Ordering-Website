@@ -1,0 +1,127 @@
+@import '../mixin';
+@import '../color';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Start of Meal*/
+.Meal{
+    width: 95%;
+    margin: 0 auto;
+
+    .heading{
+        color: $voilet;
+        margin-top: 1.25rem;
+    }
+// Start of Filter
+    .Filter{
+        @include box-shadow;
+        margin-top: 0.625rem;
+        padding: 0.625rem;
+        .FilterBar{
+            @include d-flex(space-between,center, row, wrap);
+            h2, svg{
+                margin-top: 0.625rem;
+                color: $voilet;
+                cursor: pointer;
+            }
+        }
+    
+        .DivSelectLocation{
+            margin-top: 0.625rem;
+            .LblLocation{
+                color: $voilet;
+                margin-right: 2.5rem;
+                font-weight: bold;
+            }
+            .DrdSelectLoc{
+                color: $grey;
+                padding: 0.625rem;
+                border: 1px solid $grey;
+                border-radius: 0.188rem;
+            }
+        }
+        
+        //Start of Cuisine and Cost For Two and Sort
+        .DivCuisineAndCost{
+            margin-top: 1.563rem;
+            .LblCuisnieAndCost{
+                display: block;
+                color: $voilet;
+                font-weight: bold;
+            }
+            .RadCuisineAndCost{
+                div{
+                    width: 50%;
+                    margin: 0.313rem 0;
+                    label{
+                        font-size: 0.938;
+                        color: $voilet;
+                    }
+                }
+                 @include d-flex(space-between, center, row, wrap);
+
+            }
+        }
+        //End of Cuisine and Cost For Two and Sort
+    }
+// End of Filter    
+
+// Start of Menu
+    .Menu{
+        margin-top: 0.625rem;
+        @include box-shadow;
+        padding: 0.625rem;;
+        .menuHeader{
+            @include d-flex(space-around, center, row, nowrap);
+            .menuImg{
+                img{
+                    width: 9.375rem;
+                    border-radius: 1.25rem;
+                }
+            }
+            .resturantName{
+                padding: 0 1.25rem;
+                h2, h4, p{
+                    color: $voilet;
+                }
+                p{
+                    font-size: 0.938rem;
+                }
+            }
+        }
+        .menuInfo{
+            @include d-flex(flex-start, center, row, nowrap);
+            .Cuisine{
+                width: 10.625rem;
+            }
+            p{
+                color: $voilet;
+            }
+        }
+    }
+// End of Menu
+
+// Start of Pagination
+    .Pagination{
+        @include d-flex(center, center, row, nowrap);
+        margin-top:20px;
+        div{
+            color: $voilet;
+            border: 1px solid $voilet;
+            @include box-shadow;
+            padding: 0.438rem 0.938rem;
+            margin: 0.625rem;
+            border-radius: 0.313rem;
+        }
+    }
+// End of Pagination
+
+
+}
+
+/* End of Meal*/

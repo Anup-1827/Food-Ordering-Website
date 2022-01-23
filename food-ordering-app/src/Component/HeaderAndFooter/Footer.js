@@ -1,4 +1,4 @@
-import '../../Style/HeaderAndFooter/Footer.css'// CSS File
+import '../../Style/HeaderAndFooter/Footer.scss'// CSS File
 // Packages
 import React from 'react'
 import Tippy from '@tippyjs/react'; //ToolTip
@@ -13,9 +13,9 @@ export default function Footer() {
   return (
   <div className='Footer'>
       <div className='icon'>
-            <a href='https://www.facebook.com/anupalone18899'> <FacebookIcon/> </a>
-            <a href='https://www.linkedin.com/in/anup-alone-312412179/'> <LinkedInIcon/></a>
-            <a href='https://github.com/Anup-1827'> <GitHubIcon/></a>
+            <a href='https://www.facebook.com/anupalone18899' target='_blank'> <FacebookIcon/> </a>
+            <a href='https://www.linkedin.com/in/anup-alone-312412179/' target='_blank'> <LinkedInIcon/></a>
+            <a href='https://github.com/Anup-1827' target='_blank'> <GitHubIcon/></a>
             {/* <a href='https://www.facebook.com/anupalone18899'><TwitterIcon/></a> */}
       </div>
       <p>Copyright © 2021 Anup. All rights reserved</p>

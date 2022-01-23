@@ -1,5 +1,5 @@
 // Css File
-import '../../Style/Pages/Home.css'
+import '../../Style/Pages/Home.scss'
 import Breakfast from '../../Assets/Images/Breakfast.png'
 import Lunch from '../../Assets/Images/Lunch.png'
 import Snacks from '../../Assets/Images/Snacks.png'
