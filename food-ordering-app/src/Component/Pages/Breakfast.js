@@ -1,17 +1,56 @@
 // Packkages
 import React, { useState } from 'react'
+import ReactPaginate from 'react-paginate'
 import '../../Style/Pages/CommonItems.scss'// CSS File
+import Data from '../../restauranList.json'
 // Images
 import BreakfastImg from '../../Assets/Images/Breakfast.png'
 // Icon
 import MenuIcon from '@mui/icons-material/Menu';
 
+
 export default function Breakfast() {
     const [filterTab, setFilterTab] = useState(true);
-    console.log(filterTab);
     let filterContent = '';
     { filterTab ? filterContent = 'FilterContent hide' : filterContent = 'FilterContent' }
-    console.log(filterContent);
+
+    // Pagination
+    const [pageNumber, SetPageNumber] = useState(0);
+    const noOfItems =2;
+    const itemvisited = pageNumber * noOfItems;
+    const displayItems = Data.slice(itemvisited, itemvisited+noOfItems)
+                            .map((item,index)=>{
+                                return(
+                                    <div key={index} className='Menu'>
+                                        <div className='menuHeader'>
+                                            <div className='menuImg'>
+                                                <img src={BreakfastImg} />
+                                            </div>
+                                            <div className='resturantName'>
+                                                <h2>{item["restaurant"]}</h2>
+                                                <h4>Fort</h4>
+                                                <p>{item.address}</p>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div className='menuInfo'>
+                                            <div className='Cuisine'>
+                                                <p>CUISINES</p>
+                                                <p>COST FOR TWO</p>
+                                            </div>
+                                            <div className='menuNameAndProce'>
+                                                <p>Bakery</p>
+                                                <p>₹ 700</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    )
+                            })
+    const pageCount = Math.ceil(Data.length/ noOfItems ) //Number of Pages
+    const handelPageEvent =(data)=>{
+        SetPageNumber(data.selected)
+    }
+   //End of Pagination
     return (
         <div className='Meal'>
             <h1 className='heading'>Breakfast Places</h1>
@@ -67,65 +106,47 @@ export default function Breakfast() {
                     </div>
                 </div>
                 <div className='MenuItems'>
-                    <div className='Menu'>
-                        <div className='menuHeader'>
-                            <div className='menuImg'>
-                                <img src={BreakfastImg} />
-                            </div>
-                            <div className='resturantName'>
-                                <h2>The Big Chilli Cakert</h2>
-                                <h4>Fort</h4>
-                                <p>Shop 1, Plot D, Sumruddhi Complex Chicholli</p>
-                            </div>
-                        </div>
-                        <hr />
-                        <div className='menuInfo'>
-                            <div className='Cuisine'>
-                                <p>CUISINES</p>
-                                <p>COST FOR TWO</p>
-                            </div>
-                            <div className='menuNameAndProce'>
-                                <p>Bakery</p>
-                                <p>₹ 700</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='Menu'>
-                        <div className='menuHeader'>
-                            <div className='menuImg'>
-                                <img src={BreakfastImg} />
-                            </div>
-                            <div className='resturantName'>
-                                <h2>The Big Chilli Cakert</h2>
-                                <h4>Fort</h4>
-                                <p>Shop 1, Plot D, Sumruddhi Complex Chicholli</p>
-                            </div>
-                        </div>
-                        <hr />
-                        <div className='menuInfo'>
-                            <div className='Cuisine'>
-                                <p>CUISINES</p>
-                                <p>COST FOR TWO</p>
-                            </div>
-                            <div className='menuNameAndProce'>
-                                <p>Bakery</p>
-                                <p>₹ 700</p>
-                            </div>
-                        </div>
-                    </div>
+                    {displayItems}
                 </div>
 
-
-                <div className='Pagination'>
-                    <div>{`<`}</div>
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
-                    <div>{`>`}</div>
-                </div>
+                <ReactPaginate
+                previousLabel={"<"}
+                nextLabel={">"}
+                breakLabel={'...'}
+                pageCount={pageCount}
+                containerClassName='Pagination'
+                marginPagesDisplayed={1}
+                pageRangeDisplayed={1}
+                onPageChange={handelPageEvent}
+                />
+                
             </div>
         </div>
 
     )
 }
+
+
+ /* <div className='Menu'>
+                        <div className='menuHeader'>
+                            <div className='menuImg'>
+                                <img src={BreakfastImg} />
+                            </div>
+                            <div className='resturantName'>
+                                <h2>The Big Chilli Cakert</h2>
+                                <h4>Fort</h4>
+                                <p>Shop 1, Plot D, Sumruddhi Complex Chicholli</p>
+                            </div>
+                        </div>
+                        <hr />
+                        <div className='menuInfo'>
+                            <div className='Cuisine'>
+                                <p>CUISINES</p>
+                                <p>COST FOR TWO</p>
+                            </div>
+                            <div className='menuNameAndProce'>
+                                <p>Bakery</p>
+                                <p>₹ 700</p>
+                            </div>
+                        </div>
+</div> */
