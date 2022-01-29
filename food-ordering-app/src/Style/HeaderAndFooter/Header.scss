@@ -45,3 +45,27 @@
         cursor: pointer;
     }
         /* End of Login and Create Account */
+
+
+@media (max-width: 441px) {
+
+    .Header{
+        align-items: center;
+        h1{
+            font-size: 1.875rem;
+            padding: 0.625rem 1.25rem;
+        }
+
+        .loginAndAccount{
+            padding: 0;
+            .login{
+                font-size: 0.938rem;
+            }
+            .createAcc{
+                font-size: 0.938rem;
+            }
+        }
+    }
+  
+}
+
