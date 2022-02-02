@@ -7,6 +7,7 @@ import Data from '../../restauranList.json'
 import BreakfastImg from '../../Assets/Images/Breakfast.png'
 // Icon
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom'
 
 
 export default function Breakfast() {
@@ -22,6 +23,7 @@ export default function Breakfast() {
                             .map((item,index)=>{
                                 return(
                                     <div key={index} className='Menu'>
+                                        <Link to='/Restaurant'>
                                         <div className='menuHeader'>
                                             <div className='menuImg'>
                                                 <img src={BreakfastImg} />
@@ -43,6 +45,7 @@ export default function Breakfast() {
                                                 <p>₹ 700</p>
                                             </div>
                                         </div>
+                                        </Link>
                                     </div>
                                     )
                             })

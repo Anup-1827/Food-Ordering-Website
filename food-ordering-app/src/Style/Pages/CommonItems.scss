@@ -82,6 +82,10 @@
         @include box-shadow;
         padding: 0.625rem;
         margin-bottom: 3.125rem;
+        cursor: pointer;
+        a{
+            text-decoration: none;
+        }
         .menuHeader{
             @include d-flex(space-around, center, row, nowrap);
             .menuImg{
