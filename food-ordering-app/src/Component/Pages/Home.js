@@ -13,14 +13,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 // Components
 import MealType from './MealType'
+import Login from '../LoginAndRegistration/Login'
+import Register from '../LoginAndRegistration/Register'
 
 export default function Home() {
     return (
         <div className='Home'>
             <div className='header'>
                 <div className='loginAndAccount'>
-                    <a to="#" className='login com'>Login</a>
-                    <button className='createAcc com'>Create an account</button>
+                    <Login/>
+                    <Register/>
                 </div>
                 <div className='logoAndSearch'>
                     <div className='logo d-flex'>e!</div>

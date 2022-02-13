@@ -8,6 +8,8 @@ import BreakfastImg from '../../Assets/Images/Breakfast.png'
 // Icon
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom'
+import Header from '../HeaderAndFooter/Header'
+import Footer from '../HeaderAndFooter/Footer'
 
 
 export default function Breakfast() {
@@ -47,6 +49,7 @@ export default function Breakfast() {
                                         </div>
                                         </Link>
                                     </div>
+
                                     )
                             })
     const pageCount = Math.ceil(Data.length/ noOfItems ) //Number of Pages
