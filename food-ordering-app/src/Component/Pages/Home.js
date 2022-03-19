@@ -32,7 +32,6 @@ export default function Home() {
                             <option>Select</option>
                             <option>Mumbai</option>
                             <option>Delhi</option>
-                            <option>Kolkata</option>
                             <option>Banglore</option>
                         </select>
                         <input type='text' className='searchHotels' placeholder='Search Restaurant'></input>

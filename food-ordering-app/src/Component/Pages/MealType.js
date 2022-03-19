@@ -9,6 +9,7 @@ import 'tippy.js/dist/tippy.css'; //Tooltip CSS package
 
 
 export default function MealType(props) {
+
     return (
         <Tippy  content={`Click on the card to proceed to ${props.heading} Section`}>
         <div className='card'>

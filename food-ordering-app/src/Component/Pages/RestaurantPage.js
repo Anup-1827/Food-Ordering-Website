@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useParams } from 'react-router-dom';
 // Images
 import BreakfastRestaurant from '../../Assets/Images/BreakfastRestaurant.png'
 import '../../Style/Pages/RestaurantPage.scss'
@@ -6,6 +7,7 @@ import '../../Style/Pages/RestaurantPage.scss'
 
 export default function RestaurantPage() {
   const [info, setInfo] = useState(true);
+  // const {mealType} =useParams()
 
   return <div className='RestaurantPage'>
     <div className='image'>
