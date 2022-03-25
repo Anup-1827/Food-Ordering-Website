@@ -47,6 +47,7 @@
                 padding: 0.625rem;
                 border: 1px solid $grey;
                 border-radius: 0.188rem;
+                text-transform: capitalize;
             }
         }
         
@@ -65,6 +66,7 @@
                     label{
                         font-size: 0.938rem;
                         color: $voilet;
+                        text-transform: capitalize;
                     }
                 }
                  @include d-flex(space-between, center, row, wrap);
@@ -111,6 +113,7 @@
             }
             p{
                 color: $voilet;
+                text-transform: capitalize;
             }
         }
     }

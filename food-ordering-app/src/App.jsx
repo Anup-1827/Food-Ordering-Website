@@ -12,12 +12,11 @@ import RestaurantPage from './Component/Pages/RestaurantPage';
 function App() {
   return (
     <div className="App">
-
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/:mealType' element={<FilterMeal/>} />
-          <Route path='/:mealType/Restaurant' element={<Restaurant/>} />
+          <Route path='/:mealType/Restaurant/:id' element={<Restaurant/>} />
         </Routes>
 
       </Router> 
