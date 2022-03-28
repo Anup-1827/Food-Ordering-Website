@@ -5,6 +5,7 @@ import BreakfastRestaurant from '../../Assets/Images/BreakfastRestaurant.png'
 import '../../Style/Pages/RestaurantPage.scss'
 // Restaurant List
 import restaurantList from '../../restauranList.json'
+import Orders from './Orders/Orders';
 
 
 export default function RestaurantPage(props) {
@@ -12,8 +13,8 @@ export default function RestaurantPage(props) {
   const {id} =useParams();
 
   const restauranDetails = restaurantList.filter(item=> item.id == id);
-  console.log(restauranDetails);
-
+  // console.log(restauranDetails);
+  
   let location = 'Mumbai, Maharashtra 400030';
   if(restauranDetails[0]['location'].toLowerCase() === "mumbai"){
     location = 'Mumbai, Maharashtra 400030';
@@ -31,7 +32,7 @@ export default function RestaurantPage(props) {
     </div>
     <h2>{restauranDetails[0]['restaurant']}</h2>
     <div className='PalceOrder'>
-      <button className='OrderBtn'>Palce Online Order</button>
+      {<Orders restauranDetails={restauranDetails}/>}
     </div>
 
     {/* Start of Restaurants Details */}
