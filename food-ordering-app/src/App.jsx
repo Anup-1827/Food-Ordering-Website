@@ -10,6 +10,13 @@ import RestaurantPage from './Component/Pages/RestaurantPage';
 
 
 function App() {
+
+  const btnClick = ()=>
+  {axios.get('/v1/login/test1').then((res)=>{
+    console.log(res.data.data);
+  })
+}
+
   return (
     <div className="App">
       <Router>
@@ -22,7 +29,7 @@ function App() {
       </Router> 
 
      
-          {/* <button type="submit" onClick={btnClick}>Connected?</button> */}
+          <button type="submit" onClick={btnClick}>Connected?</button>
       
     
     </div>

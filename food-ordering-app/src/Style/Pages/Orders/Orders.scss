@@ -1,0 +1,174 @@
+@import '../../color';
+@import '../../mixin';
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.orderModal{
+position: relative;
+.heading{
+    color: $voilet;
+    position: sticky;
+    top: -20px;
+    padding: 10px 0;
+    width: 100%;
+    background-color: white;
+}
+.items{
+    overflow-y: hidden;
+    .item{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    .itemInfo{
+        .greenDot{
+            div{
+            width: 7px;
+           height: 7px; 
+           border: 1px solid green;
+           background-color: green;
+           border-radius: 50%;
+            }
+           border: 2px solid green;
+           padding: 2px;
+           width: fit-content;
+        }
+        p{
+            width: 75%;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #8e8e8e;
+            letter-spacing: 0.5px;
+        }
+    }
+    .quantity{
+        position: relative;
+        .image{
+            width: 75px;
+            height: 75px;
+            background-color: $voilet;
+            border-radius: 3px;
+        }
+        .btn{
+            position: absolute;
+            top: 50px;
+            left: 8px;
+            background-color: white;
+        button{
+            background-color: white;
+            border: 1px solid white;
+            font-weight: bold;
+            width: 20px;
+            cursor: pointer;
+            padding: 3px;
+        }
+        .green{
+            color: green;
+        }
+        .minus{
+            color: grey;
+        }
+    }
+    }
+}
+}
+   .totalBar{
+       background-color: white;
+       position:sticky;
+    //    overflow: auto;
+       bottom: -20px;
+    // top: 100%;
+       display: flex;
+       justify-content: space-around;
+       width: 100%;
+       padding: 1rem 0;
+       .total{
+       span{
+           color: $voilet;
+           font-weight:  bold;
+           font-size: 1.1rem;
+           padding-left: 1rem;
+       }
+       .errMsg{
+           color: red;
+           margin-left: 20px;
+       }
+       .hide{
+           display: none;
+       }
+   } 
+   .PayNow{
+       .btnPayNow{
+           cursor: pointer;
+           background-color: $red;
+           color: white;
+           font-weight: bold;
+           letter-spacing: 2px;
+           border: 1px solid $red;
+           padding: 0.5rem 1.1rem;
+           border-radius: 4px;
+       }
+   }
+} 
+}
+
+.addressModal{
+    color: $voilet;
+
+    div{
+        @include d-grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 3px;
+        margin-top: 1.25rem !important;
+        padding: 3px;
+        label{
+            grid-column: 1/7;
+            font-size: 0.938rem;
+            font-weight: bold;
+            @include d-flex(flex-start, center, row, nowrap)
+        }
+        input{
+            padding: 0.625rem;
+        }
+        #lname{
+            margin-left: 1.25rem;
+        }
+    }
+
+    .addressLine1{
+        display: flex;
+        flex-wrap: wrap;
+        label{
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+        input{
+            width: 45%; 
+            margin-bottom: 0.5rem;
+            // align-items: center;
+            // text-align: center;
+        }
+    }
+
+    .btn{
+        // width: 30%;
+        display: block;
+        margin: 1.25rem auto;
+        background-color: $red;
+        border: 1px solid $red;
+        color: white;
+        letter-spacing: 2px;
+        border-radius: 5px;
+        padding: 0.625rem !important;
+        cursor: pointer;
+    }
+
+}

@@ -25,9 +25,9 @@ return <>
                 <form className='loginForm'>
                         <h2>Login</h2>
                         <div><label htmlFor='login'>Email</label></div>
-                        <input id='login' type="email" placeholder='email' required/> 
+                        <input id='login' type="email" placeholder='Email' required/> 
                         <div><label htmlFor='password'>Password</label></div>
-                        <input id='password' type="password" placeholder='password' required/> 
+                        <input id='password' type="password" placeholder='Password' required/> 
                         <button className='btn'>Login</button>
                 </form>
         </Modal>

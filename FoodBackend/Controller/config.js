@@ -1,6 +1,6 @@
 const config = {
     user: 'admin',
-    password: 'Anup1899',
+    password: 'Aniket1827',
     server: "(localdb)\\LocalDBFoodApp", 
     database: 'FOODAPP',
     options:{

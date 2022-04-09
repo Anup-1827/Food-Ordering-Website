@@ -46,11 +46,14 @@ exports.getData = async (req, res)=>{
            })
            sql.close();
 
-        //    return res.json(pool)
+           return res.json(pool)
     })
     }
     catch(err){
         console.log(err)
     }
 }
-    
+
+exports.postUserDetails = async (req, res)=>{
+    console.log("UserDetails");
+}
