@@ -1,22 +1,29 @@
 // Packkages
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import ReactPaginate from 'react-paginate'
 import '../../Style/Pages/CommonItems.scss'// CSS File
 import { useParams } from 'react-router-dom'
 // Icon
 import MenuIcon from '@mui/icons-material/Menu';
+//Material UI
+import Spinner from 'react-spinner-material';
 // Components
 import DisplayFilterItems from './Filter/DisplayFilterItems'
 import CheckBox from './Filter/CheckBox'
 import { cusiuneArr } from './Filter/CheckBox'
 import Dropdown from './Filter/Dropdown'
-import Data from '../../restauranList.json'
+// import Data from '../../restauranList.json'
 import NoData from './Filter/NoData';
+// import Data from '../../Services/RestaurantList';
 
 
-export default function FilterMealType() {
+
+
+export default  function FilterMealType() {
     const [filterTab, setFilterTab] = useState(true);
-    const [ItemList, setItemList] = useState(Data);
+    let [ItemList, setItemList] = useState([]);
+    let [mealTypeData, setMealTypeData] = useState([])
     const checkedArr = new Array(cusiuneArr.length).fill(false);
     const [checekedCheckbox, setCheckedCheckbox] = useState(checkedArr);
     const [selectLocation, setSelectLocation] = useState('all'); //Dropdown
@@ -25,7 +32,9 @@ export default function FilterMealType() {
     const [selectedPrices, setSelectedPrices] = useState([]);
     const [sortPrices, setSortPrices] = useState("")
     const { mealType } = useParams();
+    const [checkData, setCheckData]= useState(null)
     let filterContent = '';
+    let displayItems = '';
     { filterTab ? filterContent = 'FilterContent hide' : filterContent = 'FilterContent' }
 
     const filter = {
@@ -35,12 +44,13 @@ export default function FilterMealType() {
         sorting:sortPrices
     }
 
+
     useEffect(()=>{
         try{
         let renderingData = [];
 
         // Start of filtering data based on mealType
-        renderingData = Data.filter(item=> item.mealType.toLowerCase() === mealType.toLowerCase());
+        renderingData = mealTypeData.filter(item=> item.mealType.toLowerCase() === mealType.toLowerCase());
         // End of filtering data based on mealType
 
         //Start of Handling Location
@@ -97,12 +107,35 @@ export default function FilterMealType() {
             }
         }
         // End of Sorting Prices
+        if(renderingData.length === 0){
+            setCheckData(<NoData/>)
+        }
         setItemList(renderingData)
     }
     catch(err){
         console.log(err);
     }
     }, [selectLocation,selectedCuisine,selectedPrices, sortPrices])
+
+
+
+    useEffect(()=>{
+        setCheckData(<Spinner radius={120} color={"#ce0505"} stroke={2} visible={true} />)
+        const ResListFun = async ()=>{
+            try{
+                const ResList = await axios.get('v1/restaurantList').then(
+                    (result)=>{
+                        setItemList(result.data.list);
+                        setMealTypeData(result.data.list)
+                    })
+            }
+            catch(err){
+                alert(err)
+            }
+        }
+        ResListFun()
+    },[])
+
 
     // Start of Handling Cuisine
     const handleCheckbox = (position, filterType) => {
@@ -142,18 +175,24 @@ export default function FilterMealType() {
     const [pageNumber, SetPageNumber] = useState(0);
     const noOfItems = 2;
     const itemvisited = pageNumber * noOfItems;
-    const displayItems = ItemList.length != 0? ItemList.slice(itemvisited, itemvisited + noOfItems)
+
+    ItemList = ItemList.filter((item)=>item.mealType.toLowerCase() === mealType.toLowerCase())
+     if(ItemList.length != 0) {
+            displayItems = ItemList.slice(itemvisited, itemvisited + noOfItems)
         .map((item, index) => {
             return (
-                <DisplayFilterItems item={item} index={index} />
+                <DisplayFilterItems key={item} item={item} index={index} />
             )
-        }) :<NoData/>
+        })
+    }else{
+        displayItems=  checkData;
+
+    }
     const pageCount = Math.ceil(ItemList.length / noOfItems) //Number of Pages
     const handelPageEvent = (data) => {
         SetPageNumber(data.selected)
     }
     //End of Pagination
-
 
     return (
         <div className='Meal'>
@@ -222,10 +261,8 @@ export default function FilterMealType() {
 
 
             </div>
-
         </div>
 
     )
 }
-
 

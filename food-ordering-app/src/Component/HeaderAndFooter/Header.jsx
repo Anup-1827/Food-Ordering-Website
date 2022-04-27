@@ -1,22 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../../Style/HeaderAndFooter/Header.scss'
 //Packages
 import { Link } from 'react-router-dom'
-import Login from '../LoginAndRegistration/Login';
-import Register from '../LoginAndRegistration/Register';
+import Login from '../Modal/Login';
+import Register from '../Modal/Register';
 
 
 export default function Header() {
-    const [login, SetLogin] = useState(false)
+    // const [login, SetLogin] = useState(false)
     return (
         <div className='Header'>
-           <Link to='/'><h1>e!</h1></Link> 
+           <Link to='/'><h1>e!</h1></Link>
             <div className='loginAndAccount'>
                 
-                <Login/>
-                <Register/>
-                
-
+                {/* <Login/>
+                <Register/> */}
             </div>
         </div>
     );

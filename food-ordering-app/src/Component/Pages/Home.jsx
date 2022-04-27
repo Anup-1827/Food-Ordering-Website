@@ -10,24 +10,23 @@ import NightLife from '../../Assets/Images/Nightlife.png'
 
 // Packges
 import React from 'react'
-import { Link } from 'react-router-dom'
 // Components
 import MealType from './MealType'
-import Login from '../LoginAndRegistration/Login'
-import Register from '../LoginAndRegistration/Register'
+import Login from '../Modal/Login'
+import Register from '../Modal/Register'
 
 export default function Home() {
     return (
         <div className='Home'>
             <div className='header'>
                 <div className='loginAndAccount'>
-                    <Login/>
-                    <Register/>
+                    {/* <Login/>
+                    <Register/> */}
                 </div>
                 <div className='logoAndSearch'>
                     <div className='logo d-flex'>e!</div>
                     <div className='about'>Find the best resturants, cafés and bars</div>
-                    <div className='searchBox'>
+                    {/* <div className='searchBox'>
                         <select className='searchCity'>
                             <option>Select</option>
                             <option>Mumbai</option>
@@ -35,7 +34,7 @@ export default function Home() {
                             <option>Banglore</option>
                         </select>
                         <input type='text' className='searchHotels' placeholder='Search Restaurant'></input>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

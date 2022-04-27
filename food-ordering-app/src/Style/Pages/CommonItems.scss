@@ -84,6 +84,7 @@
         @include box-shadow;
         padding: 0.625rem;
         margin-bottom: 3.125rem;
+        width: 100%;
         cursor: pointer;
         a{
             text-decoration: none;
@@ -206,7 +207,9 @@
             .MenuItems{
                 grid-column: 4/12;
                 grid-row: 1/11;
-
+                display: flex;
+                flex-direction: column;
+               align-items:  center;
                 .Menu{
                     padding: 1.25rem;
                     .menuHeader{

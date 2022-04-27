@@ -11,6 +11,9 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.hiding{
+    visibility: hidden;
+}
 
 .orderModal{
 position: relative;
@@ -122,40 +125,56 @@ position: relative;
 
 .addressModal{
     color: $voilet;
-
-    div{
-        @include d-grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 3px;
-        margin-top: 1.25rem !important;
-        padding: 3px;
+    h2{
+        margin-bottom: 1rem;
+    }
+    .field{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap:7px;   
+        // align-items: center;
         label{
-            grid-column: 1/7;
-            font-size: 0.938rem;
-            font-weight: bold;
-            @include d-flex(flex-start, center, row, nowrap)
+            grid-column: 1/4;
         }
-        input{
-            padding: 0.625rem;
-        }
-        #lname{
-            margin-left: 1.25rem;
+        .inputField{
+            grid-column: 4/10;
+            display: flex;
+            flex-direction: column;
+            input{
+                padding: 7px;
+            }
+            span{
+                font-size: 0.7rem;
+                color: red;
+                // visibility: hidden;
+            }
         }
     }
 
-    .addressLine1{
-        display: flex;
-        flex-wrap: wrap;
+
+    .address{
         label{
-            width: 100%;
+            display: block;
             margin-bottom: 0.5rem;
         }
-        input{
-            width: 45%; 
-            margin-bottom: 0.5rem;
-            // align-items: center;
-            // text-align: center;
+        .addressFields{
+            display: flex;
+            flex-wrap: wrap;
+            .inputField{
+                width: 40%;
+                margin: 0 7px;
+                input{
+                    padding: 7px;
+                    width: 100%;
+                }
+                span{
+                    font-size: 0.7rem;
+                    color: red;
+                    // visibility: hidden;
+                }
+            }
         }
+        
     }
 
     .btn{
@@ -171,4 +190,29 @@ position: relative;
         cursor: pointer;
     }
 
+}
+
+
+
+@media (max-width: 650px){
+    .addressModal{
+        h2{
+            font-size: 1.2rem;
+        }
+        .field{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .address{
+            .addressFields{
+                flex-direction: column;
+                .inputField{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    
 }

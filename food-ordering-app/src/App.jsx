@@ -29,8 +29,9 @@ function App() {
       </Router> 
 
      
-          <button type="submit" onClick={btnClick}>Connected?</button>
-      
+          {/* <button type="submit" onClick={RestaurantList()}>Connected?</button>  */}
+
+          {/* <RestaurantList/>     */}
     
     </div>
   );
