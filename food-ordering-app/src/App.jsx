@@ -7,6 +7,7 @@ import FilterMealType from './Component/Pages/FilterMealType';
 import Header from './Component/HeaderAndFooter/Header';
 import Footer from './Component/HeaderAndFooter/Footer';
 import RestaurantPage from './Component/Pages/RestaurantPage';
+import Thankyou from './Component/Pages/Thankyou';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/:mealType' element={<FilterMeal/>} />
           <Route path='/:mealType/Restaurant/:id' element={<Restaurant/>} />
+          <Route path= '/thankyou' element= {<ThankyouPage/>} />
         </Routes>
 
       </Router> 
@@ -60,4 +62,15 @@ function Restaurant (){
   )
 };
 
+
+function ThankyouPage (){
+  return (
+    <>
+      {window.scrollTo(0,0)}
+      {window.location.pathname !== "/"?<Header/>:""}
+      <Thankyou/>
+      <Footer />
+    </>
+  )
+};
 export default App;

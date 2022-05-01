@@ -38,7 +38,9 @@ export default function Payment(details) {
                   title: "Your Order is Placed",
                   icon: "success",
                   button: "OK",
-                });
+                }).then(()=>{
+                  window.location = `${window.location.origin}/thankyou`
+                })
               })
               
           },

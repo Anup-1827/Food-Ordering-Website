@@ -15,7 +15,7 @@ export default function Footer() {
       <div className='icon'>
             <a href='https://www.facebook.com/anupalone18899' target='_blank'> <FacebookIcon/> </a>
             <a href='https://www.linkedin.com/in/anup-alone-312412179/' target='_blank'> <LinkedInIcon/></a>
-            <a href='https://github.com/Anup-1827' target='_blank'> <GitHubIcon/></a>
+            <a href='https://github.com/Anup-1827/Food-Ordering-Website/tree/master' target='_blank'> <GitHubIcon/></a>
             {/* <a href='https://www.facebook.com/anupalone18899'><TwitterIcon/></a> */}
       </div>
       <p>Copyright © 2021 Anup. All rights reserved</p>
