@@ -110,7 +110,9 @@ export default  function FilterMealType() {
         if(renderingData.length === 0){
             setCheckData(<NoData/>)
         }
-        setItemList(renderingData)
+        setItemList(renderingData);
+        SetPageNumber(0);
+        handelPageEvent({selected: 0})
     }
     catch(err){
         console.log(err);
@@ -190,6 +192,7 @@ export default  function FilterMealType() {
     }
     const pageCount = Math.ceil(ItemList.length / noOfItems) //Number of Pages
     const handelPageEvent = (data) => {
+        console.log(data)
         SetPageNumber(data.selected)
     }
     //End of Pagination
