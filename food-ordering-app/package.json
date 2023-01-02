@@ -1,7 +1,7 @@
 {
   "name": "food-ordering-app",
   "version": "0.1.0",
-  "proxy": "http://localhost:1999",
+  "proxy": "https://foodbackend.onrender.com",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.1",
