@@ -1,1 +1,6 @@
 
+food-ordering-app/node_modules
+food-ordering-app/package-lock.json
+
+FoodBackend/node_modules
+FoodBackend/package-lock.json
