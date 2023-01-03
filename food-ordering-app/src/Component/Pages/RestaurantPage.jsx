@@ -28,7 +28,7 @@ export default function RestaurantPage(props) {
   useEffect(()=>{
     const ResListFun = async ()=>{
       try{
-          const ResList = await axios.get('http://localhost:1999/v1/restaurantList').then(
+          const ResList = await axios.get('https://foodbackend.onrender.com/v1/restaurantList').then(
               (result)=>{
                 const item = result.data.list
                 const restaurantDetails = item.filter(item=> item.idRes == id);

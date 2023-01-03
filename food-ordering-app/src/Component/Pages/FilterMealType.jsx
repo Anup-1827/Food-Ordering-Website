@@ -125,7 +125,7 @@ export default  function FilterMealType() {
         setCheckData(<Spinner radius={120} color={"#ce0505"} stroke={2} visible={true} />)
         const ResListFun = async ()=>{
             try{
-                const ResList = await axios.get('v1/restaurantList').then(
+                const ResList = await axios.get('https://foodbackend.onrender.com/v1/restaurantList').then(
                     (result)=>{
                         setItemList(result.data.list);
                         setMealTypeData(result.data.list)
