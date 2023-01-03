@@ -7,7 +7,7 @@ import swal from 'sweetalert';
 export default function Payment(details) {
   // const [showMess, setShow] =useState(true)
     // let data 
-    axios.post('/v1/payment',details)
+    axios.post('https://foodbackend.onrender.com/v1/payment',details)
     .then(res=>
       {
         // res.data();
