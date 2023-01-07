@@ -4,7 +4,7 @@ import logo from '../Assets/logo.png'
 
 import swal from 'sweetalert';
 
-export default function Payment(details) {
+export default function Payment(details, order) {
   // const [showMess, setShow] =useState(true)
     // let data 
     axios.post('https://foodbackend.onrender.com/v1/payment',details)
@@ -39,7 +39,8 @@ export default function Payment(details) {
                   icon: "success",
                   button: "OK",
                 }).then(()=>{
-                  window.location = `${window.location.origin}/thankyou`
+                  // window.location = `${window.location.origin}/thankyou`
+                  order(true)
                 })
               })
               

@@ -7,6 +7,7 @@ import Spinner from 'react-spinner-material';
 
 //CSS File
 import '../../Style/Pages/AddressModal.scss'
+import { useNavigate } from 'react-router-dom';
 
 Modal.setAppElement('#root');
 
@@ -36,7 +37,8 @@ export default function AddressModal({ totalPrice, openAddressModal, setOpenAddr
   const [widthX, setWidthX] = useState("50%");
   const [mobileVal, setMobileVal] = useState('');
   const [loader, setLoader]= useState(false);
-
+  const [orderSuccess, setOrderSuccess] = useState(false)
+  const navigate = useNavigate()
   const custumStyle = {
     content: {
       width: widthX,
@@ -82,6 +84,12 @@ export default function AddressModal({ totalPrice, openAddressModal, setOpenAddr
     })
   })
 
+  useEffect(()=>{
+    if(orderSuccess){
+      navigate('/thankyou')
+    }
+  },[orderSuccess])
+
 
   const payNow = async (totalPrice) => {
     const validate = validation();
@@ -106,7 +114,7 @@ export default function AddressModal({ totalPrice, openAddressModal, setOpenAddr
     }
     setOpenAddressModal(false);
     //Start: Passing UserDetails in the Backend
-    Payment(details);
+    Payment(details, setOrderSuccess);
     setTimeout(()=>{setLoader(false)}, 3000)
     //End: Passing UserDetails in the Backend
     
