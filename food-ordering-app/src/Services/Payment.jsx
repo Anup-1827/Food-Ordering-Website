@@ -2,9 +2,10 @@ import React, { Component, useState } from 'react';
 import axios from 'axios';
 import logo from '../Assets/logo.png'
 
+
 import swal from 'sweetalert';
 
-export default function Payment(details, order) {
+export default function Payment(details) {
   // const [showMess, setShow] =useState(true)
     // let data 
     axios.post('https://foodbackend.onrender.com/v1/payment',details)
@@ -39,8 +40,7 @@ export default function Payment(details, order) {
                   icon: "success",
                   button: "OK",
                 }).then(()=>{
-                  // window.location = `${window.location.origin}/thankyou`
-                  order(true)
+                  window.location = `${window.location.origin}/thankyou`
                 })
               })
               
